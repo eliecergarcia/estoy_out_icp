@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "estoy_out_icp": {
+      "main": "src/estoy_out_icp/main.mo",
+      "type": "motoko"
+    },
+    "estoy_out_icp_assets": {
+      "dependencies": [
+        "estoy_out_icp"
+      ],
+      "frontend": {
+        "entrypoint": "src/estoy_out_icp_assets/src/index.html"
+      },
+      "source": [
+        "src/estoy_out_icp_assets/assets",
+        "dist/estoy_out_icp_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.9.3",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
