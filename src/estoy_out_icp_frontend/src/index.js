@@ -1,4 +1,4 @@
-import { estoy_out_icp } from "../../declarations/estoy_out_icp";
+import { estoy_out_icp_backend } from "../../declarations/estoy_out_icp_backend";
 
 document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -9,7 +9,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   button.setAttribute("disabled", true);
 
   // Interact with foo actor, calling the greet method
-  const greeting = await estoy_out_icp.greet(name);
+  const greeting = await estoy_out_icp_backend.greet(name);
 
   button.removeAttribute("disabled");
 

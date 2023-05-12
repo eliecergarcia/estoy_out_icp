@@ -1,19 +1,19 @@
 {
   "canisters": {
-    "estoy_out_icp": {
-      "main": "src/estoy_out_icp/main.mo",
+    "estoy_out_icp_backend": {
+      "main": "src/estoy_out_icp_backend/main.mo",
       "type": "motoko"
     },
-    "estoy_out_icp_assets": {
+    "estoy_out_icp_frontend": {
       "dependencies": [
-        "estoy_out_icp"
+        "estoy_out_icp_backend"
       ],
       "frontend": {
-        "entrypoint": "src/estoy_out_icp_assets/src/index.html"
+        "entrypoint": "src/estoy_out_icp_frontend/src/index.html"
       },
       "source": [
-        "src/estoy_out_icp_assets/assets",
-        "dist/estoy_out_icp_assets/"
+        "src/estoy_out_icp_frontend/assets",
+        "dist/estoy_out_icp_frontend/"
       ],
       "type": "assets"
     }
@@ -24,12 +24,6 @@
       "packtool": ""
     }
   },
-  "dfx": "0.9.3",
-  "networks": {
-    "local": {
-      "bind": "127.0.0.1:8000",
-      "type": "ephemeral"
-    }
-  },
+  "output_env_file": ".env",
   "version": 1
 }
