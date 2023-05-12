@@ -1,4 +1,6 @@
 # estoy_out_icp
+El proyecto consiste en poder mintear de momento imagenes las cuales tomo durante los partidos de baseball, despues se continuaria con la integracion de un frontend para poder visualizar las fotos.
+
 
 Welcome to your new estoy_out_icp project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
 
