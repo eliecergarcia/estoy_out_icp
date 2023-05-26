@@ -1,37 +1,45 @@
-import React from 'react'
-import { Layout, Space } from 'antd';
+import React, { useState } from 'react'
+import { Layout, Drawer } from 'antd';
+import UseWindowDimensions from "../src/ui/utils/size";
+import {
+    contentStyle,
+    footerStyle,
+} from '../src/ui/styles/CommonStyles'
+import { CustomHeader } from './ui/components/header/Header';
 
-const { Header, Footer, Sider, Content } = Layout;
-
-const headerStyle = {
-    textAlign: 'center',
-    color: '#fff',
-    height: 64,
-    paddingInline: 50,
-    lineHeight: '64px',
-    backgroundColor: '#7dbcea',
-};
-
-const contentStyle = {
-    textAlign: 'center',
-    minHeight: 120,
-    lineHeight: '120px',
-    color: '#fff',
-    backgroundColor: '#108ee9',
-};
-
-const footerStyle = {
-    textAlign: 'center',
-    color: '#fff',
-    backgroundColor: '#7dbcea',
-};
+const { Footer, Content } = Layout;
 
 export const App = () => {
+    const { height, } = UseWindowDimensions();
+    const [collapsed, setCollapsed] = useState(false);
+
     return (
         <Layout style={{ padding: 0, margin: 0, width: '100%' }}>
-            <Header style={headerStyle}>Header</Header>
-            <Content style={contentStyle}>Content</Content>
-            <Footer style={footerStyle}>Footer</Footer>
+            <Drawer
+                placement="left"
+                closable
+                onClose={() => { setCollapsed(false) }}
+                open={collapsed}
+                width={300}
+                title='Estoy Out'
+            >
+                
+            </Drawer>
+            <CustomHeader
+                collapsed={collapsed}
+                onClick={() => { setCollapsed(false) }} />
+            <Content
+                style={{
+                    ...contentStyle,
+                    height: height * .8
+                }}>
+                Content
+            </Content>
+            <Footer
+                style={{
+                    ...footerStyle,
+                    height: height * .1
+                }}>Footer</Footer>
         </Layout>
     )
 }
