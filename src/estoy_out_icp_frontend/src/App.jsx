@@ -3,9 +3,10 @@ import { Layout, Drawer } from 'antd';
 import UseWindowDimensions from "../src/ui/utils/size";
 import {
     contentStyle,
-    footerStyle,
 } from '../src/ui/styles/CommonStyles'
 import { CustomHeader } from './ui/components/header/Header';
+import { CustomFooter } from './ui/components/footer/CustomFooter';
+import { Minter } from './ui/components/minter/Minter';
 
 const { Footer, Content } = Layout;
 
@@ -23,23 +24,20 @@ export const App = () => {
                 width={300}
                 title='Estoy Out'
             >
-                
+
             </Drawer>
             <CustomHeader
                 collapsed={collapsed}
-                onClick={() => { setCollapsed(false) }} />
+                onClick={() => { setCollapsed(!collapsed) }}
+            />
             <Content
                 style={{
                     ...contentStyle,
                     height: height * .8
                 }}>
-                Content
+                <Minter />
             </Content>
-            <Footer
-                style={{
-                    ...footerStyle,
-                    height: height * .1
-                }}>Footer</Footer>
+            <CustomFooter />
         </Layout>
     )
 }

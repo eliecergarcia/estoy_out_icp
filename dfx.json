@@ -4,6 +4,10 @@
       "main": "src/estoy_out_icp_backend/main.mo",
       "type": "motoko"
     },
+    "nft": {
+      "main": "src/NFT/nft.mo",
+      "type": "motoko"
+    },
     "estoy_out_icp_frontend": {
       "dependencies": [
         "estoy_out_icp_backend"
